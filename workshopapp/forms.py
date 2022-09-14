@@ -63,7 +63,7 @@ class Admin_Shedule(forms.ModelForm):
         if start > end:
             raise forms.ValidationError("End Time should be greater than start Time.")
         if date < datetime.date.today():
-            raise forms.ValidationError("Date can't be in the past")
+            raise forms.ValidationError("Date can't be in the past..")
         return cleaned_data
 
 
