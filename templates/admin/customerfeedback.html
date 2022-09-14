@@ -1,0 +1,78 @@
+{% extends 'admin/dashboard.html' %}
+{% block content %}
+<div class="col-lg-12 stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Customer Feedback</h4>
+<!--                    <p class="card-description"> Add class <code>.table-{color}</code>-->
+<!--                    </p>-->
+                    <div class="table-responsive">
+                      <table class="table table-bordered ">
+                        <thead>
+                          <tr>
+                            <th class="card-title">USER</th>
+                            <th class="card-title">DATE</th>
+                            <th class="card-title">FEEDBACK</th>
+                            <th class="card-title">REPLY</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in data %}
+                          <tr class="table-default">>
+                            <td>{{ i.user }}  </td>
+                            <td>{{ i.date }}  </td>
+                            <td>{{ i.feedback }}  </td>
+                            <td>
+                              {% if i.reply == None %}
+                              <a href="{%url 'reply' i.id %}" class="btn btn-warning">No Reply</a>
+                              {% else %}
+                              {{ i.reply }}
+                              {% endif %}
+
+                            </td>
+<!--                            <td>-->
+<!--                            <form action="" method="POST" class="d-inline-block">-->
+<!--                                {% csrf_token %}-->
+<!--                                <input type="submit" class="btn btn-danger" value="Delete"/>-->
+<!--                            </form>-->
+<!--                            </td>-->
+
+                          </tr>
+                        {% endfor %}
+<!--                          <tr class="table-warning">-->
+<!--                            <td> 2 </td>-->
+<!--                            <td> Messsy Adam </td>-->
+<!--                            <td> Flash </td>-->
+<!--                            <td> $245.30 </td>-->
+<!--                            <td> July 1, 2015 </td>-->
+<!--                          </tr>-->
+<!--                          <tr class="table-danger">-->
+<!--                            <td> 3 </td>-->
+<!--                            <td> John Richards </td>-->
+<!--                            <td> Premeire </td>-->
+<!--                            <td> $138.00 </td>-->
+<!--                            <td> Apr 12, 2015 </td>-->
+<!--                          </tr>-->
+<!--                          <tr class="table-success">-->
+<!--                            <td> 4 </td>-->
+<!--                            <td> Peter Meggik </td>-->
+<!--                            <td> After effects </td>-->
+<!--                            <td> $ 77.99 </td>-->
+<!--                            <td> May 15, 2015 </td>-->
+<!--                          </tr>-->
+<!--                          <tr class="table-primary">-->
+<!--                            <td> 5 </td>-->
+<!--                            <td> Edward </td>-->
+<!--                            <td> Illustrator </td>-->
+<!--                            <td> $ 160.25 </td>-->
+<!--                            <td> May 03, 2015 </td>-->
+<!--                          </tr>-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

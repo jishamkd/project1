@@ -1,0 +1,48 @@
+{% extends 'manager/manager.html' %}
+{% block content %}
+{%load crispy_forms_filters %}
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v7 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="inner">
+				<form method="POST">
+					<h3>Contact Admin</h3>
+					{% csrf_token %}
+                    {{ form|crispy }}
+<!--					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>-->
+<!--					<label class="form-group">-->
+<!--						<input type="text" class="form-control"  required>-->
+<!--						<span>Your Name</span>-->
+<!--						<span class="border"></span>-->
+<!--					</label>-->
+<!--					<label class="form-group">-->
+<!--						<input type="text" class="form-control"  required>-->
+<!--						<span for="">Your Mail</span>-->
+<!--						<span class="border"></span>-->
+<!--					</label>-->
+<!--					<label class="form-group" >-->
+<!--						<textarea name="" id="" class="form-control" required></textarea>-->
+<!--						<span for="">Your Message</span>-->
+<!--						<span class="border"></span>-->
+<!--					</label>-->
+					<button type="submit">Submit
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+{% endblock %}

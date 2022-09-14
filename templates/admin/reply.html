@@ -1,0 +1,29 @@
+{% extends 'admin/dashboard.html' %}
+{%load crispy_forms_tags %}
+{% block content %}
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">update</h5>
+    <form method="POST">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label class=" form-control-label">Date</label>
+        <input  required  class="form-control" readonly value="{{data.date}}">
+      </div>
+      <div class="form-group">
+        <label class=" form-control-label">feedback</label>
+        <input  required  class="form-control" readonly value="{{data.feedback}}">
+      </div>
+      <div class="form-group">
+        <label class=" form-control-label">Reply</label>
+        <textarea cols="5" rows="7" required id="company" class="form-control" name="reply">
+        </textarea>
+      </div>
+    <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
