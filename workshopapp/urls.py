@@ -27,7 +27,8 @@ urlpatterns = [
     path('schedule',views.Schedule_View_by_Admin, name='schedule'),
     path('schedulecustomer',views.Schedule_View_by_Customer, name='schedulecustomer'),
     path('addschedule',views.scheduleadd,name='addschedule'),
-    path('scheduledelete/<int:id>/',views.scheduledelete,name='scheduledelete')
+    path('scheduledelete/<int:id>/',views.scheduledelete,name='scheduledelete'),
+    path('appointment/<int:id>/',views.schedule_appointment,name='appointment')
 
 
 

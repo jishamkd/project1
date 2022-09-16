@@ -1,9 +1,10 @@
+from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 
 # Create your views here.
 from workshopapp.forms import feedbackForm, Contact_Admin, Admin_Shedule
-from workshopapp.models import feedback, Manager_Contact_Admin, Schedule
+from workshopapp.models import feedback, Manager_Contact_Admin, Schedule, customer, Appointment
 
 
 def homepage(request):
@@ -120,3 +121,20 @@ def scheduledelete(request,id):
     data.delete()
     return redirect('schedule')
 
+
+def schedule_appointment(request,id):
+    data = Schedule.objects.get(id=id)
+    u = customer.objects.get(user=request.user)
+    appointment = Appointment.objects.filter(user=u, schedule=data)
+    if appointment.exists():
+        messages.info(request, 'You have already requested appointment for this schedule')
+        return redirect('schedulecustomer')
+    else:
+        if request.method == 'POST':
+           obj = Appointment()
+           obj.user = u
+           obj.schedule = data
+           obj.save()
+           messages.info(request, 'Appointment added successfully')
+           return redirect('schedulecustomer')
+    return render(request, 'customer/appointment.html', {"data": data})

@@ -1,0 +1,29 @@
+{% extends 'customer/cusdash.html' %}
+{%load crispy_forms_tags %}
+{% block content %}
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">schedule</h5>
+    <form method="POST">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label class=" form-control-label">Date</label>
+        <input  required class="form-control" readonly value="{{data.date}}">
+      </div>
+      <div class="form-group">
+        <label class=" form-control-label">Start Time</label>
+        <input  required  class="form-control" readonly value="{{data.start_time}}">
+      </div>
+      <div class="form-group">
+        <label class=" form-control-label">End Time</label>
+        <input  required  class="form-control" readonly value="{{data.end_time}}">
+      </div>
+    <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
