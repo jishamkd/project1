@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import TimeInput
 
-from workshopapp.models import Login, customer, manager, feedback, Manager_Contact_Admin, Schedule
+from workshopapp.models import Login, customer, manager, feedback, Manager_Contact_Admin, Schedule, Assign_Work
 
 
 class loginform(UserCreationForm):
@@ -67,7 +67,11 @@ class Admin_Shedule(forms.ModelForm):
         return cleaned_data
 
 
-
+class work_assign(forms.ModelForm):
+    date = forms.DateField(widget=DateInput)
+    class Meta:
+        model = Assign_Work
+        fields = '__all__'
 
 
 

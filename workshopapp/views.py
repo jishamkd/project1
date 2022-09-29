@@ -3,8 +3,8 @@ from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from workshopapp.forms import feedbackForm, Contact_Admin, Admin_Shedule
-from workshopapp.models import feedback, Manager_Contact_Admin, Schedule, customer, Appointment
+from workshopapp.forms import feedbackForm, Contact_Admin, Admin_Shedule, work_assign
+from workshopapp.models import feedback, Manager_Contact_Admin, Schedule, customer, Appointment, manager, Assign_Work
 
 
 def homepage(request):
@@ -91,8 +91,17 @@ def Manager_Admin_reply(request,id):
         r = request.POST.get('reply')
         data.reply = r
         data.save()
-        return redirect('managermessageview')
+        return redirect('managerdashboard')
     return render(request, 'admin/replytomanager.html', {'data': data})
+
+
+
+def Admin_reply_view_to_manager(request):
+    u = request.user
+    data = Manager_Contact_Admin.objects.filter(user=u)
+    return render(request, 'manager/adminreplyview.html', {'data': data})
+
+
 
 
 def Schedule_View_by_Admin(request):
@@ -138,3 +147,74 @@ def schedule_appointment(request,id):
            messages.info(request, 'Appointment added successfully')
            return redirect('schedulecustomer')
     return render(request, 'customer/appointment.html', {"data": data})
+
+
+def Appointment_View_by_Manager(request):
+    app = Appointment.objects.all()
+    return render(request, 'manager/appointmentlist.html', {'app': app})
+
+
+def status_accept(request,id):
+    n = Appointment.objects.get(id=id)
+    n.status = 1
+    n.save()
+    messages.info(request, 'Appointment confirmed')
+    return redirect('appointmentlist')
+
+
+def status_reject(request,id):
+    n = Appointment.objects.get(id=id)
+    n.status = 2
+    n.save()
+    messages.info(request, 'Appointment rejected')
+    return redirect('appointmentlist')
+
+
+def Status_View_by_Customer(request):
+    u = customer.objects.get(user=request.user)
+    s = Appointment.objects.filter(user=u)
+    return render(request, 'customer/statusviewbycustomer.html', {'s': s})
+
+
+def work_assign_details(request):
+    form = work_assign()
+    if request.method == 'POST':
+        form = work_assign(request.POST)
+        if form.is_valid():
+            data = form.save(commit=False)
+            data.save()
+            return render(request, 'admin/dashboard.html')
+    return render(request,'admin/workassign.html', {'form': form})
+
+
+def Work_assign_View_by_admin(request):
+    wrk = Assign_Work.objects.all()
+    return render(request, 'admin/workassignlist.html', {'wrk': wrk})
+
+def Work_assign_View_by_manager(request):
+    u = manager.objects.get(user=request.user)
+    v = Assign_Work.objects.filter(manager=u)
+    return render(request,'manager/workassignviewbymanager.html', {'v': v})
+
+
+def work_status_edit(request,id):
+    data = Assign_Work.objects.get(id=id)
+    form = work_assign(instance=data)
+    if request.method == 'POST':
+        form = work_assign(request.POST, instance=data)
+        if form.is_valid():
+           form.save()
+           return redirect('workassignmanagerview')
+    return render(request, 'manager/workstatusedit.html', {"form": form})
+
+
+def Work_assign_View_by_customer(request):
+    u = customer.objects.get(user=request.user)
+    v = Assign_Work.objects.filter(customer=u)
+    return render(request,'customer/workassignviewbycustomer.html', {'v': v})
+
+
+def customerlist_view_by_manager(request):
+    u = manager.objects.get(user=request.user)
+    v = customer.objects.all()
+    return render(request,'manager/customerslistviewbymanager.html', {'v': v})

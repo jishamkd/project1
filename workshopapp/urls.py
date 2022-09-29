@@ -13,6 +13,7 @@ urlpatterns = [
     path('managerregistration', managerviews.managerreg, name='managerregistration'),
     path('managerslist',managerviews.viewmanagerlist, name='managerslist'),
     path('customerlist',customerviews.viewcustomerlist,name='customerlist'),
+    path('customerslistviewbymanager',views.customerlist_view_by_manager,name='customerslistviewbymanager'),
     path('customerupdate/<int:id>/',customerviews.customerupdate,name='customerupdate'),
     path('customerdelete/<int:id>/',customerviews.customerdelete,name='customerdelete'),
     path('managerupdate/<int:id>/',managerviews.managerupdate,name='managerupdate'),
@@ -24,11 +25,22 @@ urlpatterns = [
     path('replytomanager/<int:id>/',views.Manager_Admin_reply,name='replytomanager'),
     path('messagetoadmin',views.manager_message_form, name='messagetoadmin'),
     path('managermessageview',views.Manager_Message_View, name='managermessageview'),
+    path('adminreplyview',views.Admin_reply_view_to_manager,name='adminreplyview'),
     path('schedule',views.Schedule_View_by_Admin, name='schedule'),
     path('schedulecustomer',views.Schedule_View_by_Customer, name='schedulecustomer'),
     path('addschedule',views.scheduleadd,name='addschedule'),
     path('scheduledelete/<int:id>/',views.scheduledelete,name='scheduledelete'),
-    path('appointment/<int:id>/',views.schedule_appointment,name='appointment')
+    path('appointment/<int:id>/',views.schedule_appointment,name='appointment'),
+    path('appointmentlist',views.Appointment_View_by_Manager, name='appointmentlist'),
+    path('accept/<int:id>/',views.status_accept, name= 'accept'),
+    path('reject/<int:id>/', views.status_reject, name= 'reject'),
+    path('statusviewcustomer',views.Status_View_by_Customer, name= 'statusviewcustomer'),
+    path('workassign',views.work_assign_details,name='workassign'),
+    path('workassignlist',views.Work_assign_View_by_admin,name='workassignlist'),
+    path('workassignmanagerview',views.Work_assign_View_by_manager,name='workassignmanagerview'),
+    path('workassignstatusedit/<int:id>/',views.work_status_edit,name='workassignstatusedit'),
+    path('workassigncustomerview',views.Work_assign_View_by_customer,name='workassigncustomerview')
+
 
 
 

@@ -1,0 +1,86 @@
+{% extends 'manager/manager.html' %}
+{% block content %}
+<div class="col-lg-12 stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Appointment List</h4>
+<!--                    <p class="card-description"> Add class <code>.table-{color}</code>-->
+<!--                    </p>-->
+                    <div class="table-responsive">
+                      <table class="table table-bordered ">
+                        <thead>
+                          <tr>
+                            <th class="card-title">CUSTOMER</th>
+                            <th class="card-title">Date</th>
+                            <th class="card-title">Start Time</th>
+                            <th class="card-title">End Time</th>
+                            <th class="card-title">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in app %}
+                          <tr class="table-default">
+                            <td>{{ i.user.name }}  </td>
+                            <td>{{ i.schedule.date }}  </td>
+                            <td>{{ i.schedule.start_time }}  </td>
+                            <td>{{ i.schedule.end_time }}  </td>
+                            <td>
+                              {% if i.status == 0 %}
+                              <a href="{% url 'accept' i.id %}"><button type="button" class="btn btn-primary">Accept</button></a>
+                              <a href="{% url 'reject' i.id %}"><button type="button" class="btn btn-secondary">Reject</button></a>
+                              {% elif i.status == 1 %}
+                              <button type="button" class="btn btn-success">Accepted</button>
+                              {% elif i.status == 2 %}
+                              <button type="button" class="btn btn-danger">Rejected</button>
+                              {% endif %}
+                            </td>
+
+
+<!--                            <td>-->
+<!--                              <a href="#" class="btn btn-warning">appointment</a>-->
+<!--                            </td>-->
+<!--                            </td>-->
+                          </tr>
+                        {% endfor %}
+<!--                        {% for message in messages %}-->
+<!--                          <div class="alert alert-primary" role="alert">-->
+<!--                              {{message}}-->
+<!--                          </div>-->
+<!--                        {% endfor %}-->
+<!--                          <tr class="table-warning">-->
+<!--                            <td> 2 </td>-->
+<!--                            <td> Messsy Adam </td>-->
+<!--                            <td> Flash </td>-->
+<!--                            <td> $245.30 </td>-->
+<!--                            <td> July 1, 2015 </td>-->
+<!--                          </tr>-->
+<!--                          <tr class="table-danger">-->
+<!--                            <td> 3 </td>-->
+<!--                            <td> John Richards </td>-->
+<!--                            <td> Premeire </td>-->
+<!--                            <td> $138.00 </td>-->
+<!--                            <td> Apr 12, 2015 </td>-->
+<!--                          </tr>-->
+<!--                          <tr class="table-success">-->
+<!--                            <td> 4 </td>-->
+<!--                            <td> Peter Meggik </td>-->
+<!--                            <td> After effects </td>-->
+<!--                            <td> $ 77.99 </td>-->
+<!--                            <td> May 15, 2015 </td>-->
+<!--                          </tr>-->
+<!--                          <tr class="table-primary">-->
+<!--                            <td> 5 </td>-->
+<!--                            <td> Edward </td>-->
+<!--                            <td> Illustrator </td>-->
+<!--                            <td> $ 160.25 </td>-->
+<!--                            <td> May 03, 2015 </td>-->
+<!--                          </tr>-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

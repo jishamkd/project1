@@ -1,0 +1,88 @@
+{% extends 'admin/dashboard.html' %}
+{% block content %}
+<div class="col-lg-21 stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Work Assigned List</h4>
+<!--                    <p class="card-description"> Add class <code>.table-{color}</code>-->
+<!--                    </p>-->
+                    <div class="table-responsive">
+                      <table class="table table-bordered ">
+                        <thead>
+                          <tr>
+                            <th class="card-title">Customer Name</th>
+<!--                            <th class="card-title">Vehicle Name</th>-->
+                            <th class="card-title">Category</th>
+                            <th class="card-title">Vehicle Model</th>
+                            <th class="card-title">Vehicle brand</th>
+                            <th class="card-title">Vehicle Number</th>
+                            <th class="card-title">Problem Description</th>
+                            <th class="card-title">Manager Name</th>
+                            <th class="card-title">Repair Status</th>
+                            <th class="card-title">Cost</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in wrk %}
+                          <tr class="table-default">
+                            <td>{{ i.customer.name }}  </td>
+<!--                            <td>{{ i.Assign_Work.vehicle_name }}  </td>-->
+                            <td>{{ i.category }}  </td>
+                            <td>{{ i.vehicle_model }}  </td>
+                            <td>{{ i.vehicle_brand }}  </td>
+                            <td>{{ i.vehicle_number }}  </td>
+                            <td>{{ i.problem_description }}  </td>
+                            <td>{{ i.manager.name }}  </td>
+                            <td>{{ i.rep_category }}  </td>
+                            <td>{{ i.cost }}  </td>
+
+
+
+<!--                            <td>-->
+<!--                              <a href="#" class="btn btn-warning">appointment</a>-->
+<!--                            </td>-->
+<!--                            </td>-->
+                          </tr>
+                        {% endfor %}
+<!--                        {% for message in messages %}-->
+<!--                          <div class="alert alert-primary" role="alert">-->
+<!--                              {{message}}-->
+<!--                          </div>-->
+<!--                        {% endfor %}-->
+<!--                          <tr class="table-warning">-->
+<!--                            <td> 2 </td>-->
+<!--                            <td> Messsy Adam </td>-->
+<!--                            <td> Flash </td>-->
+<!--                            <td> $245.30 </td>-->
+<!--                            <td> July 1, 2015 </td>-->
+<!--                          </tr>-->
+<!--                          <tr class="table-danger">-->
+<!--                            <td> 3 </td>-->
+<!--                            <td> John Richards </td>-->
+<!--                            <td> Premeire </td>-->
+<!--                            <td> $138.00 </td>-->
+<!--                            <td> Apr 12, 2015 </td>-->
+<!--                          </tr>-->
+<!--                          <tr class="table-success">-->
+<!--                            <td> 4 </td>-->
+<!--                            <td> Peter Meggik </td>-->
+<!--                            <td> After effects </td>-->
+<!--                            <td> $ 77.99 </td>-->
+<!--                            <td> May 15, 2015 </td>-->
+<!--                          </tr>-->
+<!--                          <tr class="table-primary">-->
+<!--                            <td> 5 </td>-->
+<!--                            <td> Edward </td>-->
+<!--                            <td> Illustrator </td>-->
+<!--                            <td> $ 160.25 </td>-->
+<!--                            <td> May 03, 2015 </td>-->
+<!--                          </tr>-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

@@ -14,6 +14,9 @@ class customer(models.Model):
     address=models.CharField(max_length=300)
     email=models.EmailField(max_length=100)
     mobile=models.CharField(max_length=25)
+    def __str__(self):
+        return self.name
+
 
 class manager(models.Model):
     user = models.OneToOneField(Login, on_delete=models.CASCADE, related_name='manager')
@@ -21,6 +24,8 @@ class manager(models.Model):
     address = models.CharField(max_length=300)
     email = models.EmailField(max_length=100)
     mobile = models.CharField(max_length=25)
+    def __str__(self):
+        return self.name
 
 class feedback(models.Model):
     user = models.ForeignKey(Login, on_delete=models.DO_NOTHING)
@@ -44,9 +49,32 @@ class Schedule(models.Model):
 
 
 class Appointment(models.Model):
-    user = models.ForeignKey(customer, on_delete=models.CASCADE, related_name='appointment')
+    user = models.ForeignKey(customer, on_delete=models.CASCADE)
     schedule = models.ForeignKey(Schedule, on_delete=models.CASCADE)
     status = models.IntegerField(default=0)
+
+
+class Assign_Work(models.Model):
+    customer = models.ForeignKey(customer, on_delete=models.DO_NOTHING)
+    manager = models.ForeignKey(manager, on_delete=models.DO_NOTHING)
+    cat = (('Two wheeler with gear', 'two wheeler with gear'),
+           ('Two wheeler without gear','Two wheeler without gear'),
+           ('Four wheeler','Four wheeler'),
+           ('Three Wheeler','Three Wheeler'))
+    category = models.CharField(max_length=50,choices=cat)
+    vehicle_name = models.CharField(max_length=50)
+    vehicle_model = models.CharField(max_length=50)
+    vehicle_brand = models.CharField(max_length=50)
+    vehicle_number = models.CharField(max_length=10)
+    problem_description = models.CharField(max_length=100)
+    date = models.DateField()
+    status = (('Repairing', 'Repairing'),
+           ('work completed', 'Work Completed')
+           )
+    rep_category = models.CharField(max_length=50,choices=status)
+    cost = models.CharField(max_length=50,default=0)
+
+
 
 
 
