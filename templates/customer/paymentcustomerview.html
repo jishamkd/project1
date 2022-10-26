@@ -1,14 +1,14 @@
-{% extends 'admin/dashboard.html' %}
+{% extends 'customer/cusdash.html' %}
 {%load crispy_forms_tags %}
 {% block content %}
 <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">update</h5>
-    <form method="POST" enctype="multipart/form-data">
+    <h5 class="card-title">Payment</h5>
+    <form method="POST" >
     {% csrf_token %}
       {{form|crispy}}
-    <button type="submit">Submit</button>
+      <button type="submit">Submit</button></a>
     </form>
   </div>
 </div>

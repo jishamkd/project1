@@ -26,8 +26,9 @@
                             <td>{{ i.schedule.end_time }}  </td>
                             <td>
                               {% if i.status == 0 %}
-                              <a href="{% url 'accept' i.id %}"><button type="button" class="btn btn-primary">Accept</button></a>
-                              <a href="{% url 'reject' i.id %}"><button type="button" class="btn btn-secondary">Reject</button></a>
+                              <h1>pending</h1>
+<!--                              <a href="#"><button type="button" class="btn btn-primary">Accept</button></a>-->
+<!--                              <a href="#"><button type="button" class="btn btn-secondary">Reject</button></a>-->
                               {% elif i.status == 1 %}
                               <button type="button" class="btn btn-success">Booking Confirmed</button>
                               {% elif i.status == 2 %}

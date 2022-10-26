@@ -12,6 +12,7 @@
                           <tr>
                             <th class="card-title">Name</th>
                             <th class="card-title">Address</th>
+                            <th class="card-title">Image</th>
                             <th class="card-title">Email</th>
                             <th class="card-title">Mobile</th>
                             <th class="card-title">Update</th>
@@ -23,6 +24,9 @@
                           <tr class="table-default">>
                             <td>{{ i.name }}  </td>
                             <td>{{ i.address }}  </td>
+                            <td>
+                             <img src="{{ i.image.url }}" class="img-responsive" style="width: 100%; float: left; margin-right: 100px;" />
+                            </td>
                             <td>{{ i.email }}  </td>
                             <td>{{ i.mobile }}  </td>
                             <td>

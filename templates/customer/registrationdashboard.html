@@ -292,214 +292,179 @@
 		<div class="sidebar sidebar-style-2" data-background-color="dark2">
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
-					<div class="user">
-<!--						<div class="avatar-sm float-left mr-2">-->
-<!--&lt;!&ndash;							<img src=" #" alt="..." class="avatar-img rounded-circle">&ndash;&gt;-->
-<!--						</div>-->
-						<div class="info">
-							<a data-toggle="collapse" href=" #collapseExample " aria-expanded="true">
-<!--								<span>-->
-<!--									Hizrian-->
-<!--									<span class="user-level">Administrator</span>-->
-<!--									<span class="caret"></span>-->
-<!--								</span>-->
-							</a>
-							<div class="clearfix"></div>
+<!--					<div class="user">-->
+<!--&lt;!&ndash;						<div class="avatar-sm float-left mr-2">&ndash;&gt;-->
+<!--&lt;!&ndash;							<img src="#" alt="..." class="avatar-img rounded-circle">&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--						<div class="info">-->
+<!--							<a data-toggle="collapse" href=" #collapseExample " aria-expanded="true">-->
+<!--&lt;!&ndash;								<span>&ndash;&gt;-->
+<!--&lt;!&ndash;									Hizrian&ndash;&gt;-->
+<!--&lt;!&ndash;									<span class="user-level">Administrator</span>&ndash;&gt;-->
+<!--&lt;!&ndash;									<span class="caret"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;								</span>&ndash;&gt;-->
+<!--							</a>-->
+<!--							<div class="clearfix"></div>-->
 
-							<div class="collapse in" id="collapseExample">
-								<ul class="nav">
-									<li>
-										<a href=" {% static '#profile' %} ">
-											<span class="link-collapse">My Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href=" {% static '#edit' %} ">
-											<span class="link-collapse">Edit Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href=" {% static '#settings' %} ">
-											<span class="link-collapse">Settings</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<ul class="nav nav-primary">
-						<li class="nav-item active">
-							<a data-toggle="collapse" href=" {% static '#dashboard' %} " class="collapsed" aria-expanded="false">
-								<i class="fas fa-home"></i>
-								<p>Manager Dashboard</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="dashboard">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href=" {% static 'dash/demo1/index.html' %} ">
-											<span class="sub-item">Dashboard 1</span>
-										</a>
-									</li>
-									<li>
-										<a href=" {% static 'dash/demo2/index.html' %} ">
-											<span class="sub-item">Dashboard 2</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="nav-section">
-							<span class="sidebar-mini-icon">
-								<i class="fa fa-ellipsis-h"></i>
-							</span>
-							<h4 class="text-section">Components</h4>
-						</li>
-						<li class="nav-item">
-							<a href=" {% url 'managerregistration' %} ">
-								<i class="fas fa-desktop"></i>
-								<p>Register</p>
-<!--								<span class="badge badge-success">4</span>-->
-							</a>
-						</li>
-<!--						<li class="nav-item">-->
-<!--							<a href=" {% url 'messagetoadmin' %} ">-->
-<!--								<i class="fas fa-desktop"></i>-->
-<!--								<p>Contact Admin</p>-->
-<!--&lt;!&ndash;								<span class="badge badge-success">4</span>&ndash;&gt;-->
-<!--							</a>-->
-<!--						</li>-->
-						<li class="nav-item">
-							<a href=" {% url 'customerslistviewbymanager' %} ">
-								<i class="fas fa-desktop"></i>
-								<p>View Customers</p>
-<!--								<span class="badge badge-success">4</span>-->
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href=" {% url 'appointmentlist' %} ">
-								<i class="fas fa-desktop"></i>
-								<p>View appointments</p>
-<!--								<span class="badge badge-success">4</span>-->
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href=" {% url 'workassignmanagerview' %} ">
-								<i class="fas fa-desktop"></i>
-								<p>View Assigned Work</p>
-<!--								<span class="badge badge-success">4</span>-->
-							</a>
-						</li>
-						<li class="nav-item">
-							<a data-toggle="collapse" href=" #base  ">
-								<i class="fas fa-layer-group"></i>
-								<p>Contact Admin</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="base">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href=" {% url 'messagetoadmin' %} ">
-											<span class="sub-item">Chat</span>
-										</a>
-									</li>
-									<li>
-										<a href=" {% url 'adminreplyview' %} ">
-											<span class="sub-item">View Reply</span>
-										</a>
-									</li>
-<!--									<li>-->
-<!--										<a href=" {% static 'demo1/components/gridsystem.html' %} ">-->
-<!--											<span class="sub-item">Grid System</span>-->
-<!--										</a>-->
-<!--									</li>-->
-<!--									<li>-->
-<!--										<a href=" {% static 'demo1/components/panels.html' %} ">-->
-<!--											<span class="sub-item">Panels</span>-->
-<!--										</a>-->
-<!--									</li>-->
-<!--									<li>-->
-<!--										<a href=" {% static 'demo1/components/notifications.html' %} ">-->
-<!--											<span class="sub-item">Notifications</span>-->
-<!--										</a>-->
-<!--									</li>-->
-<!--									<li>-->
-<!--										<a href=" {% static 'demo1/components/sweetalert.html' %} ">-->
-<!--											<span class="sub-item">Sweet Alert</span>-->
-<!--										</a>-->
-<!--									</li>-->
-<!--									<li>-->
-<!--										<a href=" {% static 'demo1/components/font-awesome-icons.html' %} ">-->
-<!--											<span class="sub-item">Font Awesome Icons</span>-->
-<!--										</a>-->
-<!--									</li>-->
-<!--									<li>-->
-<!--										<a href=" {% static 'demo1/components/simple-line-icons.html' %} ">-->
-<!--											<span class="sub-item">Simple Line Icons</span>-->
-<!--										</a>-->
-<!--									</li>-->
-<!--									<li>-->
-<!--										<a href=" {% static 'demo1/components/flaticons.html' %} ">-->
-<!--											<span class="sub-item">Flaticons</span>-->
-<!--										</a>-->
-<!--									</li>-->
-<!--									<li>-->
-<!--										<a href=" {% static 'demo1/components/typography.html' %} ">-->
-<!--											<span class="sub-item">Typography</span>-->
-<!--										</a>-->
-<!--									</li>-->
-								</ul>
-							</div>
-						</li>
-<!--						<li class="nav-item">-->
-<!--							<a data-toggle="collapse" href=" #sidebarLayouts ">-->
-<!--								<i class="fas fa-th-list"></i>-->
-<!--								<p>Sidebar Layouts</p>-->
-<!--								<span class="caret"></span>-->
-<!--							</a>-->
-<!--							<div class="collapse" id="sidebarLayouts">-->
+<!--&lt;!&ndash;							<div class="collapse in" id="collapseExample">&ndash;&gt;-->
+<!--&lt;!&ndash;								<ul class="nav">&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static '#profile' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="link-collapse">My Profile</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static '#edit' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="link-collapse">Edit Profile</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static '#settings' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="link-collapse">Settings</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;								</ul>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<ul class="nav nav-primary">-->
+<!--						<li class="nav-item active">-->
+<!--&lt;!&ndash;							<a data-toggle="collapse" href=" {% static '#dashboard' %} " class="collapsed" aria-expanded="false">&ndash;&gt;-->
+<!--&lt;!&ndash;								<i class="fas fa-home"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;								<p>Dashboard</p>&ndash;&gt;-->
+<!--&lt;!&ndash;								<span class="caret"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;							</a>&ndash;&gt;-->
+<!--							<div class="collapse" id="dashboard">-->
 <!--								<ul class="nav nav-collapse">-->
 <!--									<li>-->
-<!--										<a href=" {% static 'dash/demo2/sidebar-style-1.html' %} ">-->
-<!--											<span class="sub-item">Sidebar Style 1</span>-->
+<!--										<a href=" {% static 'dash/demo1/index.html' %} ">-->
+<!--											<span class="sub-item">Dashboard 1</span>-->
 <!--										</a>-->
 <!--									</li>-->
 <!--									<li>-->
-<!--										<a href=" {% static 'dash/demo2/overlay-sidebar.html' %} ">-->
-<!--											<span class="sub-item">Overlay Sidebar</span>-->
-<!--										</a>-->
-<!--									</li>-->
-<!--									<li>-->
-<!--										<a href=" {% static 'dash/demo2/compact-sidebar.html' %} ">-->
-<!--											<span class="sub-item">Compact Sidebar</span>-->
-<!--										</a>-->
-<!--									</li>-->
-<!--									<li>-->
-<!--										<a href=" {% static 'dash/demo2/static-sidebar.html' %} ">-->
-<!--											<span class="sub-item">Static Sidebar</span>-->
-<!--										</a>-->
-<!--									</li>-->
-<!--									<li>-->
-<!--										<a href=" {% static 'dash/demo2/icon-menu.html' %} ">-->
-<!--											<span class="sub-item">Icon Menu</span>-->
+<!--										<a href=" {% static 'dash/demo2/index.html' %} ">-->
+<!--											<span class="sub-item">Dashboard 2</span>-->
 <!--										</a>-->
 <!--									</li>-->
 <!--								</ul>-->
 <!--							</div>-->
 <!--						</li>-->
+<!--						<li class="nav-section">-->
+<!--							<span class="sidebar-mini-icon">-->
+<!--								<i class="fa fa-ellipsis-h"></i>-->
+<!--							</span>-->
+<!--							<h4 class="text-section">Components</h4>-->
+<!--						</li>-->
 <!--						<li class="nav-item">-->
-<!--							<a data-toggle="collapse" href=" #forms ">-->
-<!--								<i class="fas fa-pen-square"></i>-->
-<!--								<p>Forms</p>-->
+<!--&lt;!&ndash;							<a data-toggle="collapse" href=" #base  ">&ndash;&gt;-->
+<!--&lt;!&ndash;								<i class="fas fa-layer-group"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;								<p>Base</p>&ndash;&gt;-->
+<!--&lt;!&ndash;								<span class="caret"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;							</a>&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="collapse" id="base">&ndash;&gt;-->
+<!--&lt;!&ndash;								<ul class="nav nav-collapse">&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'demo1/components/avatars.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Avatars</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'demo1/components/buttons.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Buttons</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'demo1/components/gridsystem.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Grid System</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'demo1/components/panels.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Panels</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'demo1/components/notifications.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Notifications</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'demo1/components/sweetalert.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Sweet Alert</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'demo1/components/font-awesome-icons.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Font Awesome Icons</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'demo1/components/simple-line-icons.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Simple Line Icons</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'demo1/components/flaticons.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Flaticons</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'demo1/components/typography.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Typography</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;								</ul>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--						</li>-->
+<!--						<li class="nav-item">-->
+<!--							<a data-toggle="collapse" href=" #sidebarLayouts ">-->
+<!--								<i class="fas fa-th-list"></i>-->
+<!--								<p>Service Schedules</p>-->
 <!--								<span class="caret"></span>-->
 <!--							</a>-->
-<!--							<div class="collapse" id="forms">-->
+<!--							<div class="collapse" id="sidebarLayouts">-->
 <!--								<ul class="nav nav-collapse">-->
 <!--									<li>-->
-<!--										<a href=" {% static 'forms/forms.html' %} ">-->
-<!--											<span class="sub-item">Basic Form</span>-->
+<!--										<a href=" {% url 'schedulecustomer' %} ">-->
+<!--											<span class="sub-item">view</span>-->
 <!--										</a>-->
 <!--									</li>-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'dash/demo2/overlay-sidebar.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Overlay Sidebar</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'dash/demo2/compact-sidebar.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Compact Sidebar</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'dash/demo2/static-sidebar.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Static Sidebar</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'dash/demo2/icon-menu.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Icon Menu</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--						</li>-->
+<!--						<li class="nav-item">-->
+<!--&lt;!&ndash;							<a data-toggle="collapse" href=" #forms ">&ndash;&gt;-->
+<!--&lt;!&ndash;								<i class="fas fa-pen-square"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;								<p>Service Status</p>&ndash;&gt;-->
+<!--&lt;!&ndash;								<span class="caret"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;							</a>&ndash;&gt;-->
+<!--							<div class="collapse" id="forms">-->
+<!--								<ul class="nav nav-collapse">-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href=" {% static 'forms/forms.html' %} ">&ndash;&gt;-->
+<!--&lt;!&ndash;											<span class="sub-item">Basic Form</span>&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
 <!--								</ul>-->
 <!--							</div>-->
 <!--						</li>-->
@@ -543,36 +508,94 @@
 <!--						<li class="nav-item">-->
 <!--							<a data-toggle="collapse" href=" #charts ">-->
 <!--								<i class="far fa-chart-bar"></i>-->
-<!--								<p>Charts</p>-->
+<!--								<p>Feedback</p>-->
 <!--								<span class="caret"></span>-->
 <!--							</a>-->
 <!--							<div class="collapse" id="charts">-->
 <!--								<ul class="nav nav-collapse">-->
 <!--									<li>-->
-<!--										<a href=" {% static 'charts/charts.html' %} ">-->
-<!--											<span class="sub-item">Chart Js</span>-->
+<!--										<a href=" {% url 'feedback' %} ">-->
+<!--											<span class="sub-item">Add</span>-->
 <!--										</a>-->
 <!--									</li>-->
 <!--									<li>-->
-<!--										<a href=" {% static 'charts/sparkline.html' %} ">-->
-<!--											<span class="sub-item">Sparkline</span>-->
+<!--										<a href=" {% url 'cusfeedbackview' %} ">-->
+<!--											<span class="sub-item">View</span>-->
+<!--										</a>-->
+<!--									</li>-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--						<li class="nav-item">-->
+<!--							<a href=" {% url 'workassigncustomerview' %} ">-->
+<!--								<i class="fas fa-desktop"></i>-->
+<!--								<p>Service Status</p>-->
+<!--&lt;!&ndash;								<span class="badge badge-success">4</span>&ndash;&gt;-->
+<!--							</a>-->
+<!--						</li>-->
+<!--						</li>-->
+<!--						<li class="nav-item">-->
+<!--							<a href=" {% url 'statusviewcustomer' %} ">-->
+<!--								<i class="fas fa-desktop"></i>-->
+<!--								<p>Appointment status</p>-->
+<!--&lt;!&ndash;								<span class="badge badge-success">4</span>&ndash;&gt;-->
+<!--							</a>-->
+<!--						</li>-->
+
+<!--						<li class="nav-item">-->
+<!--&lt;!&ndash;							<a data-toggle="collapse" href=" #submenu ">&ndash;&gt;-->
+<!--&lt;!&ndash;								<i class="fas fa-bars"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;								<p>Menu Levels</p>&ndash;&gt;-->
+<!--&lt;!&ndash;								<span class="caret"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;							</a>&ndash;&gt;-->
+<!--							<div class="collapse" id="submenu">-->
+<!--								<ul class="nav nav-collapse">-->
+<!--									<li>-->
+<!--										<a data-toggle="collapse" href=" {% static '#subnav1' %} ">-->
+<!--											<span class="sub-item">Level 1</span>-->
+<!--											<span class="caret"></span>-->
+<!--										</a>-->
+<!--										<div class="collapse" id="subnav1">-->
+<!--											<ul class="nav nav-collapse subnav">-->
+<!--												<li>-->
+<!--													<a href="#">-->
+<!--														<span class="sub-item">Level 2</span>-->
+<!--													</a>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<a href="#">-->
+<!--														<span class="sub-item">Level 2</span>-->
+<!--													</a>-->
+<!--												</li>-->
+<!--											</ul>-->
+<!--										</div>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a data-toggle="collapse" href=" {% static '#subnav2' %} ">-->
+<!--											<span class="sub-item">Level 1</span>-->
+<!--											<span class="caret"></span>-->
+<!--										</a>-->
+<!--										<div class="collapse" id="subnav2">-->
+<!--											<ul class="nav nav-collapse subnav">-->
+<!--												<li>-->
+<!--													<a href="#">-->
+<!--														<span class="sub-item">Level 2</span>-->
+<!--													</a>-->
+<!--												</li>-->
+<!--											</ul>-->
+<!--										</div>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="#">-->
+<!--											<span class="sub-item">Level 1</span>-->
 <!--										</a>-->
 <!--									</li>-->
 <!--								</ul>-->
 <!--							</div>-->
 <!--						</li>-->
-<!--						<li class="nav-item">-->
-<!--							<a href=" {% static 'widgets.html' %} ">-->
-<!--								<i class="fas fa-desktop"></i>-->
-<!--								<p>Widgets</p>-->
-<!--&lt;!&ndash;								<span class="badge badge-success">4</span>&ndash;&gt;-->
-<!--							</a>-->
+<!--						<li class="mx-4 mt-2">-->
+<!--							<a href="{% url 'logout' %}" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-heart"></i> </span>Logout</a>-->
 <!--						</li>-->
-
-						<li class="mx-4 mt-2">
-							<a href="{% url 'logout' %}" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-heart"></i> </span>Logout</a>
-						</li>
-					</ul>
+<!--					</ul>-->
 				</div>
 			</div>
 		</div>

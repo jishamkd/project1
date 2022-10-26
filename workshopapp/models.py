@@ -12,6 +12,7 @@ class customer(models.Model):
     user = models.OneToOneField(Login, on_delete=models.CASCADE, related_name='customer')
     name=models.CharField(max_length=50)
     address=models.CharField(max_length=300)
+    image = models.FileField(upload_to='customers/')
     email=models.EmailField(max_length=100)
     mobile=models.CharField(max_length=25)
     def __str__(self):
@@ -22,6 +23,7 @@ class manager(models.Model):
     user = models.OneToOneField(Login, on_delete=models.CASCADE, related_name='manager')
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=300)
+    image = models.FileField(upload_to='images/')
     email = models.EmailField(max_length=100)
     mobile = models.CharField(max_length=25)
     def __str__(self):
@@ -69,13 +71,16 @@ class Assign_Work(models.Model):
     problem_description = models.CharField(max_length=100)
     date = models.DateField()
     status = (('Repairing', 'Repairing'),
-           ('work completed', 'Work Completed')
+           ('Work Completed', 'Work Completed'),
+              ('Payment Done', 'Payment Done')
            )
     rep_category = models.CharField(max_length=50,choices=status)
     cost = models.CharField(max_length=50,default=0)
 
 
-
-
+class Payment(models.Model):
+    Card_number = models.CharField(max_length=12)
+    Expiry_Date = models.CharField(max_length=4)
+    Cvv = models.CharField(max_length=3)
 
 

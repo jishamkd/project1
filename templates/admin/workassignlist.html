@@ -20,6 +20,9 @@
                             <th class="card-title">Manager Name</th>
                             <th class="card-title">Repair Status</th>
                             <th class="card-title">Cost</th>
+                            <th class="card-title">Payment</th>
+                            <th class="card-title">Update</th>
+                            <th class="card-title">Delete</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -35,6 +38,21 @@
                             <td>{{ i.manager.name }}  </td>
                             <td>{{ i.rep_category }}  </td>
                             <td>{{ i.cost }}  </td>
+                            <td>
+                              {% if i.rep_category == 'Work Completed' %}
+                                 <a href="{% url 'pay' i.id %}"><button type="submit" class="btn btn-secondary">Pay</button></a>
+                              {% elif i.rep_category == 'Payment Done' %}
+                                <button type="button" class="btn btn-secondary">Payment Success</button></a>
+                              {% endif %}
+                            </td>
+                            <td>
+                              <a href="{%url 'workassignupdate' i.id %}" class="btn btn-warning">Update</a>
+                            </td>
+                            <td>
+                              <a href="{% url 'workassigndelete' i.id %}" class="btn btn-danger">Delete</a>
+                            </td>
+
+
 
 
 

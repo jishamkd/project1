@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import TimeInput
 
-from workshopapp.models import Login, customer, manager, feedback, Manager_Contact_Admin, Schedule, Assign_Work
+from workshopapp.models import Login, customer, manager, feedback, Manager_Contact_Admin, Schedule, Assign_Work, Payment
 
 
 class loginform(UserCreationForm):
@@ -73,5 +73,12 @@ class work_assign(forms.ModelForm):
         model = Assign_Work
         fields = '__all__'
 
+
+
+class Payment_Form(forms.ModelForm):
+    Expiry_Date = forms.CharField(label='Expiry Date(MM/YY)')
+    class Meta:
+        model = Payment
+        fields = ('Card_number','Expiry_Date','Cvv')
 
 

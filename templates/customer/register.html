@@ -1,4 +1,4 @@
-{% extends 'customer/cusdash.html' %}
+{% extends 'customer/registrationdashboard.html' %}
 {% block content %}
 {%load crispy_forms_filters %}
 <section class="vh-100 bg-image"
@@ -11,7 +11,7 @@
             <div class="card-body p-50">
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-              <form method="POST">
+              <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy }}
                 {{ log|crispy }}

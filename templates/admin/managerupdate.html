@@ -5,7 +5,7 @@
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">update</h5>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
       {{form|crispy}}
     <button type="submit">Submit</button>

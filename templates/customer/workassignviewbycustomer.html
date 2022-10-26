@@ -37,6 +37,13 @@
                               {{ i.rep_category }}
                             </td>
                             <td>{{ i.cost }}  </td>
+                            <td>
+                              {% if i.rep_category == 'Work Completed' %}
+                                 <a href="{% url 'paymentcustomerview' i.id %}"><button type="submit" class="btn btn-secondary">Pay</button></a>
+                              {% elif i.rep_category == 'Payment Done' %}
+                                <button type="button" class="btn btn-secondary">Payment Success</button></a>
+                              {% endif %}
+                            </td>
 
 
 

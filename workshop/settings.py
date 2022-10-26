@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'workshopapp',
-    'crispy_forms'
+    'crispy_forms',
+
 
 ]
 
@@ -129,3 +130,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'workshopapp.Login'
+
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+LOGIN_URL = '/loginpage'
+LOGOUT_REDIRECT_URL ='loginpage'
